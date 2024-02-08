@@ -1,4 +1,5 @@
 import React from "react";
+import Tile from "./Tile";
 
 const verticalAxis = ["1", "2", "3", "4", "5", "6", "7", "8"];
 const horizontalAxis = ["a", "b", "c", "d", "e", "f", "g", "h"];
@@ -10,14 +11,13 @@ const Chessboard: React.FC<ChessboardProps> = () => {
 
   for (let j = verticalAxis.length - 1; j >= 0; j--) {
     for (let i = 0; i < horizontalAxis.length; i++) {
-
       const isBlackTile = (i + j) % 2 === 0;
-
       const tileStyle = isBlackTile ? "bg-lime-600" : "bg-lime-100";
 
       board.push(
         <div key={`${horizontalAxis[i]}${verticalAxis[j]}`} className={`w-[100px] h-[100px] ${tileStyle}`}>
-        
+          <Tile number={i + j} />
+
           {/* [{horizontalAxis[i]} {verticalAxis[j]}] */}
         
         </div>
