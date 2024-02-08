@@ -1,4 +1,4 @@
-import Image from "next/image";
+import React from "react";
 import Chessboard from "./components/chessboard";
 
 interface PageProps {
@@ -8,11 +8,11 @@ interface PageProps {
 const Page: React.FC<PageProps> = (props) => {
   return (
     <main>
-      <div className=" grid place-content-center h-[130vh] bg-[#202020] ">
-        <Chessboard />
+      <div className="grid place-content-center h-[130vh] bg-[#202020]">
+        <Chessboard image={""} x={0} y={0}/>
       </div>
     </main>
   );
-}
+};
 
 export default Page;
